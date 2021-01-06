@@ -38,14 +38,21 @@
     
     <main>
         <!--Bloc "Carte du produit selectionné"-->
-        <div class="container">
-            <h2 class="card-title">Titre de la carte</h2>
-            <div class="card">
-                <div class="card-body">
-                    <p class="card-text">Contenu textuel de la carte</p>
-                </div>
-            </div>
-        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Article</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                </tr>
+            </thead>
+            <tbody id="cart-tablebody">
+                
+            </tbody>
+        </table>
+        
+        <p>Sous total : <span class="subtotal"></span>€</p>
+
         <!--Fin du Bloc "Carte du produit selectionné"-->
 
         <!--Bloc "Formulaire"-->
@@ -78,7 +85,7 @@
                                 </label>
                                 <input class="form-control" type="email"  id="input_504" />
                             </div>
-                            <button class="bloc-button btn btn-lg btn-block cta-hero btn-atomic-tangerine" type="submit">
+                            <button class="bloc-button btn btn-lg btn-block cta-hero btn-atomic-tangerine" type="submit" id="confirm-command">
                                 Commander
                             </button>
                         </form>
