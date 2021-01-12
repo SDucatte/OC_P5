@@ -1,5 +1,7 @@
 // Requete AJAX générique
 
+
+
 function appelAjax(options) {
 var defaultOption = {
     "api" : "/furniture", 
@@ -22,12 +24,24 @@ options = Object.assign(defaultOption, options);
            }
        };
        for (let header of options.listHeader){
-           request.setRequestHeader(header.name, header.value);
-       }
+        request.setRequestHeader(header.name, header.value);
+    }
+
        request.open(options.method, "http://localhost:3000/api" + options.api);
        request.send(options.data);
    })
-   }
+}
+
+// Requete affichage du produit
+
+
+
+
+
+
+
+
+
 
 /*
 appelAjax({

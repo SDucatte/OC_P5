@@ -3,7 +3,7 @@ appelAjax({}).then((result) => {
     let div = document.getElementById('product-content');
 
     for (let product of result) {
-        var card = `<a class='card' href='produit.html?id=${product._id}'>
+        var card = `<a class='card link' href='produit.html?id=${product._id}'>
             <h2 class='card-header'>${product.name}</h2>
             <img class='image card-img-top' src='${product.imageUrl}'>
             <p class='card-subtitle'>${product.description}</p>
@@ -12,9 +12,27 @@ appelAjax({}).then((result) => {
 
         div.innerHTML += card;
     }
+    
 })
 
-        /*
+const getUrl = window.location;
+console.log(getUrl);
+
+
+
+
+
+
+
+
+
+
+
+
+ /*
+  
+
+
         let card = document.createElement('a');
         card.setAttribute('class', 'card');
         card.style.width = '100%';
@@ -55,4 +73,12 @@ let choix = document.createElement('select');
 
 
 // Afficher les données
+
+function Product(name, imageUrl, varnish, description, price) {
+    this.name = name; 
+    this.imageUrl = imageUrl;
+    this.varnish = varnish;
+    this.description = description;
+    this.price = price;
+}
 */
