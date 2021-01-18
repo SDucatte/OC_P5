@@ -1,0 +1,78 @@
+.navbar-toggler {
+    border: solid 1px black;
+}
+
+.card, a.card:hover {
+    color: #202020;
+    text-decoration: none;
+}
+
+.link.card {
+    width: 20%;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+a.card:hover {
+    box-shadow: 0px 0px 8px 4px rgba(32, 32, 32, 0.3);
+}
+.card-header {
+    text-align: center;
+}
+
+.card-subtitle {
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+.card-text {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+}
+
+#product-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #e9ecef;
+    padding: 2rem;
+    margin-top: 5%;
+}
+
+.card__produit {
+    width: 25%;
+}
+
+.btn.btn-primary {
+    font-size: 16px; 
+    border: 2px solid #e1c984; 
+    background:transparent;
+    padding:15px 40px; 
+    text-transform:uppercase;
+    border-radius:30px;
+    color:black;
+    margin-bottom: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+ }
+  
+ .btn.btn-primary:hover {
+     background:#e1c984;
+     border-radius:0;
+     border: 2px solid #e1c984;
+     color:white;
+ }
+
+ .btn.btn-primary:hover {
+    background:#b4a064;
+    border-radius:0;
+    border: 2px solid #b4a064;
+    color:white;
+}
