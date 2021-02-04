@@ -29,16 +29,6 @@ options = Object.assign(defaultOption, options);
    })
 }
 
-// Requete affichage du produit
-
-
-
-
-
-
-
-
-
 /*
 appelAjax({
     method : "POST",

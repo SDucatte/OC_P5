@@ -6,18 +6,30 @@ let oneId = urlParams.get('id');
 
 // Requête pour afficher le produit sélectionné
 
-appelAjax({api: "/furniture/" + oneId}).then((product) => {
-    let otherDiv = document.getElementById('product-content');
+appelAjax({ api: "/furniture/" + oneId }).then((productApi) => {
+    var product = new Product(productApi);
+    document.getElementById('product-content').innerHTML += product.displayDetail();
 
-        var oneProduct = `<div class='card card__produit'>
-        <h2 class='card-header'>${product.name}</h2>
-        <img class='image card-img-top' src='${product.imageUrl}'>
-        <p class='card-subtitle'>${product.description}</p>
-        <p class='card-text'>${product.price} €</p>
-        <button class='btn btn-primary' id='addCart'>Ajouter au panier</button>
-        </div>`;
 
-        otherDiv.innerHTML += oneProduct;
+    document.getElementById('addCart').addEventListener('click', function () {
+    basketManager.add(product);
+    })
+    
+    document.getElementById('removeCart').addEventListener('click', function () {
+    basketManager.remove(product);
+    }) 
 })
-
-
+ 
+    
+    
+    
+    /* var oneProduct = `<div class='card produit'>
+    <h2 class='card-header'>${product.name}</h2>
+    <img class='image card-img-top' src='${product.imageUrl}'>
+    <p class='card-subtitle'>${product.description}</p>
+    <p class='card-text'>${product.price} €</p>
+    <button class='btn btn-primary' id='addCart'>Ajouter au panier</button>
+    </div>`;
+    
+    product.total(product);
+    */

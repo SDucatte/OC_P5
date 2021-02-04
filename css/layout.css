@@ -1,16 +1,20 @@
+/* Header */
+
 .navbar-toggler {
     border: solid 1px black;
 }
 
-.card, a.card:hover {
-    color: #202020;
-    text-decoration: none;
-}
+/* Style produit page d'acceuil */
 
 .link.card {
     width: 20%;
     margin-left: 1rem;
     margin-bottom: 1rem;
+}
+
+.card, a.card:hover {
+    color: #202020;
+    text-decoration: none;
 }
 
 a.card:hover {
@@ -38,17 +42,13 @@ a.card:hover {
     margin-top: 5%;
 }
 
-.footer {
-    display: flex;
-    justify-content: space-around;
-    background-color: #e9ecef;
-    padding: 2rem;
-    margin-top: 5%;
-}
+/* Style produit page produit */
 
-.card__produit {
+.produit {
     width: 25%;
 }
+
+/* Style Bouton */
 
 .btn.btn-primary {
     font-size: 16px; 
@@ -75,4 +75,19 @@ a.card:hover {
     border-radius:0;
     border: 2px solid #b4a064;
     color:white;
+}
+
+/* footer */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #e9ecef;
+    padding: 2rem;
+    margin-top: 5%;
+}
+
+/* Style Panier */
+
+.basketImg{
+    width: 100px;
 }

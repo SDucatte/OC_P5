@@ -1,62 +1,45 @@
+// Affichage panier 
+
+/*
+document.getElementById('cart-tablebody').innerHTML += product.displayBasket();
 
 
-function initBasket() {
-    var basket = localStorage.getItem('basket');
-    if(basket != null){
-        return JSON.parse(basket);
-    } else {
-        return [];
-    }
+for (let product of productBasket){
+    document.getElementById("cart-tablebody").innerHTML += product.displayBasket();
 }
-
-function addBasket(product) {
-    var basket = initBasket();
-    basket.push(product);
-    saveBasket(basket);
-}
-
-function saveBasket(basket) {
-    localStorage.setItem('product', JSON.stringify(basket));
-    
-}
+for (let product of productBasket) {
+    var product = new Product(product);
+    div.innerHTML += product.displayList();
+} 
 
 
-appelAjax({api: "/furniture/" + oneId}).then(() => {
-    let btn = document.getElementById('addCart');
-    btn.addEventListener('click', saveBasket);
-})
-    /*
+var basket = localStorage.getItem('basket');
+basket = JSON.parse(basket);
+var showBasket = document.querySelector("cart-tablebody");
+for (let productBasket of this.basket) {
+    showBasket.innerHTML += basket.displayBasket();
+} 
 
 
-
-    appelAjax({api: "/furniture/" + oneId}).then((product) => {
-    let btn = document.getElementById('addCart');
-    btn.addEventListener('click', saveBasket(product));
+appelAjax({}).then((result) => {
+    let showBasket = document.querySelector("show-basket");
+    for (let productApi of result) {
+        var product = new Product(productApi);
+        showBasket.innerHTML += product.displayBasket();
+    } 
 })
 
-
-function btnClic() {
-    let btn = document.getElementById('addCart');
-    btn.addEventListener('click', saveBasket());
+*/
+// Récupération localstorage
+let basket = localStorage.getItem("basket");
+basket = JSON.parse(basket);
+// Récupération élément où afficher le panier
+let showBasket = document.getElementById("show-basket");
+// Boucle pour afficher les produits du panier
+for (let productInBasket of basket) {
+    let product = new Product(productInBasket);
+    showBasket.innerHTML += product.displayBasket();
 }
 
-
-   
-appelAjax({api: "/furniture/" + oneId}).then((product) => {
-    var basket = localStorage.getItem('basket');
-  
-})
-
-
-
-
-
-    
-    
-  
-    
-  
-    var btn = document.querySelector('button');
-    btn.addEventListener('click', addBasket(product));
-    localStorage.getItem(product);
-    */
+// Affichage prix total du panier
+document.getElementById('total').innerHTML = basketManager.total();

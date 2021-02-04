@@ -1,17 +1,9 @@
 appelAjax({}).then((result) => {
     let div = document.getElementById('product-content');
-    
-    for (let product of result) {
-        var card = `<a class='card link' href='produit.html?id=${product._id}'>
-        <h2 class='card-header'>${product.name}</h2>
-        <img class='image card-img-top' src='${product.imageUrl}'>
-        <p class='card-subtitle'>${product.description}</p>
-        <p class='card-text'>${product.price} €</p>
-        </a>`;
-        
-        div.innerHTML += card;
-    }
-    
+    for (let productApi of result) {
+       var product = new Product(productApi);
+       div.innerHTML += product.displayList();
+    } 
 })
 
 
@@ -39,20 +31,6 @@ for (let product of result) {
     
     otherDiv.innerHTML += oneProduct;
 }
-showProduct({}).then((result) => {
-    let otherDiv = document.getElementById('product-content');
-    
-    for (let product of result) {
-        var oneProduct = `<h2 class='card-header'>${product.name}</h2>
-        <img class='image card-img-top' src='${product.imageUrl}'>
-        <p class='card-subtitle'>${product.description}</p>
-        <p class='card-text'>${product.price} €</p>
-        </a>`;
-        
-        otherDiv.innerHTML += oneProduct;
-    }
-})
-
 
 let card = document.createElement('a');
 card.setAttribute('class', 'card');
@@ -77,29 +55,5 @@ description.setAttribute('class', 'card-text');
 price.innerHTML = product.price + ' €';
 card.appendChild(price);
 div.appendChild(card);
-*/
 
-
-
-
-/*
-let choix = document.createElement('select');
-choix.innerHTML = "Personnaliser votre produit";
-div.appendChild(choix);
-
-let list = document.querySelector('select');
-let choixVernis = document.createElement('option');
-choixVernis.innerHTML = product.varnish;
-list.appendChild(choixVernis);
-
-
-// Afficher les données
-
-function Product(name, imageUrl, varnish, description, price) {
-    this.name = name; 
-    this.imageUrl = imageUrl;
-    this.varnish = varnish;
-    this.description = description;
-    this.price = price;
-}
 */
