@@ -9,27 +9,14 @@ let oneId = urlParams.get('id');
 appelAjax({ api: "/furniture/" + oneId }).then((productApi) => {
     var product = new Product(productApi);
     document.getElementById('product-content').innerHTML += product.displayDetail();
-
-
+    
+    // Ajout d'un gestionnaire d'événement lors de l'ajout au panier
     document.getElementById('addCart').addEventListener('click', function () {
-    basketManager.add(product);
+        basketManager.add(product);
     })
     
     document.getElementById('removeCart').addEventListener('click', function () {
-    basketManager.remove(product);
+        basketManager.remove(product);
     }) 
 })
- 
-    
-    
-    
-    /* var oneProduct = `<div class='card produit'>
-    <h2 class='card-header'>${product.name}</h2>
-    <img class='image card-img-top' src='${product.imageUrl}'>
-    <p class='card-subtitle'>${product.description}</p>
-    <p class='card-text'>${product.price} €</p>
-    <button class='btn btn-primary' id='addCart'>Ajouter au panier</button>
-    </div>`;
-    
-    product.total(product);
-    */
+

@@ -77,6 +77,20 @@ a.card:hover {
     color:white;
 }
 
+.btn.btn-primary.btn-remove{
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.table
+td {
+    vertical-align: middle;
+}
+.btn.btn-primary.btn-basket{
+    width: 60%;
+}
+
 /* footer */
 .footer {
     display: flex;
@@ -88,6 +102,38 @@ a.card:hover {
 
 /* Style Panier */
 
+.totalPanier{
+    text-align: right;
+    margin-right: 5%;
+    font-weight: 800;
+}
+
+td, tr{
+    text-align: center;
+}
 .basketImg{
-    width: 100px;
+    width: 12rem;
+}
+
+.row{
+    justify-content: center;
+}
+
+
+
+/* Style Formulaire */
+
+#nom-incorrect, 
+#prenom-incorrect, 
+#email-incorrect,
+#ville-incorrect,
+#adresse-incorrect{
+    font-size: smaller;
+    color: red;
+    position: relative;
+    top: -1.5rem;
+}
+
+.form-group{
+    margin: 0;
 }

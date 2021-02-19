@@ -23,9 +23,6 @@
                     </button>
                     <div id="navbarContent" class="collapse navbar-collapse">
                         <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link">Commandes</a>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="panier.html">Panier</a>
                             </li>
@@ -53,7 +50,7 @@
             </tbody>
         </table>
         
-        <p>Sous total : <span id="total"></span>€</p>
+        <p class="totalPanier">Prix Panier : <span id="total"></span>€</p>
 
         <!--Fin du Bloc "Carte du produit selectionné"-->
 
@@ -67,27 +64,39 @@
                                 <label>
                                     Nom
                                 </label>
-                                <input id="name" class="form-control"  placeholder="Nom requis" />
+                                <input id="name" class="form-control"  placeholder="Nom requis" required pattern="^[a-zA-Zéèêëàîï\-\s]+$"/><br>
+                                <span id="nom-incorrect"></span>
                             </div>
                             <div class="form-group">
                                 <label>
                                     Prénom
                                 </label>
-                                <input id="nickname" class="form-control"  placeholder="Prénom requis" />
+                                <input id="nickname" class="form-control"  placeholder="Prénom requis" required pattern="^[a-zA-Zéèêëàîï\-\s]+$"/><br>
+                                <span id="prenom-incorrect"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Adresse
+                                </label>
+                                <input id="adresse" class="form-control" placeholder="Adresse requise" required pattern="^[0-9][A-Za-zéèêëàîï0-9 -]*$"/><br>
+                                <span id="adresse-incorrect"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Ville
+                                </label>
+                                <input id="ville" class="form-control" placeholder="Ville requise" required pattern="^[a-zA-Zéèêëàîï\-\s]+$"/><br>
+                                <span id="ville-incorrect"></span>
                             </div>
                             <div class="form-group">
                                 <label>
                                     Adresse email
                                 </label>
-                                <input name="mail" id="email" class="form-control" type="email"  placeholder="E-mail requis" />
+                                <input name="mail" id="email" class="form-control" type="email" placeholder="E-mail requis" required/><br>
+                                <span id="email-incorrect"></span>
                             </div>
-                            <div class="form-group">
-                                <label>
-                                    Mot de passe
-                                </label>
-                                <input class="form-control" type="email"  id="input_504" />
-                            </div>
-                            <button class="bloc-button btn btn-lg btn-block cta-hero btn-atomic-tangerine" type="submit" id="confirm-command">
+
+                            <button class="bloc-button btn btn-lg btn-block cta-hero btn-atomic-tangerine btn-primary btn-basket" type="submit" id="command">
                                 Commander
                             </button>
                         </div>
@@ -98,7 +107,7 @@
 <!--Bloc "Formulaire"-->
     </main>
 
-    <footer>
+    <footer class="footer">
         <p class="text-center">Mentions légales</p>
         <p class="text-center">Contact</p>
     </footer>

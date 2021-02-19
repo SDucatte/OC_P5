@@ -1,4 +1,5 @@
 class Product {
+    // Initialisation de la classe produit
     constructor(produit) {
         if (produit.quantity != undefined){
             this.fromBasket(produit);
@@ -7,6 +8,7 @@ class Product {
         }
     }
     
+    // Fonction qui définit les propriétés du produit lorsque celui est récupéré de l'API
     fromApi(produit){
         this.id = produit._id;
         this.name = produit.name;
@@ -17,7 +19,8 @@ class Product {
         this.price = produit.price/100;
         
     }
-    
+
+    // Fonction qui définit les propriétés du produit lorsque celui est récupéré du panier
     fromBasket(produit){
         this.id = produit.id;
         this.name = produit.name;
@@ -28,6 +31,7 @@ class Product {
         this.price = produit.price;
     }
     
+    // Affichage de tous les produits sur la page index.html
     displayList() {
         return `<a href="produit.html?id=${this.id}" class='card link'>
         <h2 class='card-header'>${this.name}</h2>
@@ -37,6 +41,7 @@ class Product {
         </a>`;
     }
     
+    // Affichage d'un produit sur la page produit.html
     displayDetail() {
         return `<div class='card produit'>
         <h2 class='card-header'>${this.name}</h2>
@@ -48,10 +53,11 @@ class Product {
         </select>
         <p class='card-text'>${this.price} €</p>
         <button class="btn btn-primary" id="addCart">Ajouter au panier</button>
-        <button class="btn btn-primary" id="removeCart">Enlever du panier</button>
+        <td><button class="btn btn-primary btn-basket" id="removeCart">Supprimer du panier</button></td>
         </div>`;
     }
     
+    // Sur la page produit, ajout d'une liste permmettant la personnalisation du produit
     displayVarnish(){
         let listOption = "";
         for (let varnishChoice of this.custom){
@@ -60,9 +66,10 @@ class Product {
         return listOption;
     }
     
-    // affichage produit dans le panier (à faire en dernier)
+    // Affichage des produits dans le panier
     displayBasket() {
         return `<tr>
+        
         <td><img class='basketImg' src='${this.img}'></td>
         <td>${this.name}</td>
         <td>${this.quantity}</td>
