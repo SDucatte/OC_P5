@@ -53,7 +53,6 @@ class Product {
         </select>
         <p class='card-text'>${this.price} €</p>
         <button class="btn btn-primary" id="addCart">Ajouter au panier</button>
-        <td><button class="btn btn-primary btn-basket" id="removeCart">Supprimer du panier</button></td>
         </div>`;
     }
     
@@ -69,7 +68,6 @@ class Product {
     // Affichage des produits dans le panier
     displayBasket() {
         return `<tr>
-        
         <td><img class='basketImg' src='${this.img}'></td>
         <td>${this.name}</td>
         <td>${this.quantity}</td>

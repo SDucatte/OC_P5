@@ -7,7 +7,7 @@ let showBasket = document.getElementById("show-basket");
 
 // Boucle pour afficher les produits du panier
 for (let productInBasket of basket) {
-    let product = new Product(productInBasket);
+    let product = new Product(productInBasket); 
     showBasket.innerHTML += product.displayBasket();
 }
 
@@ -23,7 +23,6 @@ var checkCity = document.getElementById('ville');
 var checkEmail = document.getElementById('email');
 
 // Evénements liés à la soumission du formulaire
-
 // Récupération du bouton et ajout du gestionnaire d'événement qui exécutera les vérifications avant l'envoi des données au server
 var validation = document.getElementById('command');
 validation.addEventListener('click', function () {
@@ -48,7 +47,7 @@ validation.addEventListener('click', function () {
                 city: checkCity.value,
                 email: checkEmail.value
             },
-            // Donnée panier
+            // Données panier
             products: basketManager.basket.map(product => product.id)
         }
         

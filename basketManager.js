@@ -15,9 +15,10 @@ class BasketManager {
     // Fonction qui ajoute un produit au panier
     add(product) {
         var productBasket = this.basket.find(productBasket => product.id == productBasket.id);
+        // Quand le produit est déjà dans le panier, ajouter 1 à la quantité
         if (productBasket != undefined) {
             productBasket.quantity++;
-            
+        // Quand il n'y est pas, ajoute le produit
         } else {
             this.basket.push(product);
         }
@@ -27,19 +28,6 @@ class BasketManager {
     // Fonction qui envoi au localstorage le contenu du panier
     save() {
         localStorage.setItem('basket', JSON.stringify(this.basket));
-    }
-    
-    // Fonction qui supprime un produit au panier
-    remove(product) {
-        var productBasket = this.basket.find(productBasket => product.id == productBasket.id);
-        // Vérifier si quantité > 1 = quantité --
-        if (productBasket.quantity > 1) {
-            productBasket.quantity--;
-        } else {
-            // Si quantité = 1 : supprimer produit
-            this.basket = this.basket.filter(productBasket => product.id != productBasket.id);
-        }
-        this.save();
     }
     
     // Fonction qui calcul le prix total du panier

@@ -15,8 +15,5 @@ appelAjax({ api: "/furniture/" + oneId }).then((productApi) => {
         basketManager.add(product);
     })
     
-    document.getElementById('removeCart').addEventListener('click', function () {
-        basketManager.remove(product);
-    }) 
 })
 
