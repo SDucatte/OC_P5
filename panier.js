@@ -14,7 +14,6 @@ for (let productInBasket of basket) {
 // Affichage prix total du panier
 document.getElementById('total').innerHTML = basketManager.total();
 
-
 // Stockage dans des variables de tous les inputs du formulaire
 var checkName = document.getElementById('name');
 var checkNickname = document.getElementById('nickname');

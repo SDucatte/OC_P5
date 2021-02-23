@@ -42,6 +42,20 @@ a.card:hover {
     margin-top: 5%;
 }
 
+@media(max-width : 768px){
+    #product-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .link.card {
+        width: 80%;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+}
+
 /* Style produit page produit */
 
 .produit {
@@ -61,16 +75,16 @@ a.card:hover {
     margin-bottom: 1rem;
     margin-right: auto;
     margin-left: auto;
- }
-  
- .btn.btn-primary:hover {
-     background:#e1c984;
-     border-radius:0;
-     border: 2px solid #e1c984;
-     color:white;
- }
+}
 
- .btn.btn-primary:hover {
+.btn.btn-primary:hover {
+    background:#e1c984;
+    border-radius:0;
+    border: 2px solid #e1c984;
+    color:white;
+}
+
+.btn.btn-primary:hover {
     background:#b4a064;
     border-radius:0;
     border: 2px solid #b4a064;
@@ -98,8 +112,15 @@ td {
     background-color: #e9ecef;
     padding: 2rem;
     margin-top: 5%;
+    position: relative;
+    bottom: 0rem;
 }
 
+.footer-command {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 /* Style Panier */
 
 .totalPanier{
