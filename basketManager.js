@@ -15,6 +15,7 @@ class BasketManager {
     // Fonction qui ajoute un produit au panier
     add(product) {
         var productBasket = this.basket.find(productBasket => product.id == productBasket.id);
+
         // Quand le produit est déjà dans le panier, ajouter 1 à la quantité
         if (productBasket != undefined) {
             productBasket.quantity++;

@@ -43,6 +43,7 @@ a.card:hover {
 }
 
 @media(max-width : 768px){
+    
     #product-content {
         display: flex;
         flex-direction: column;
@@ -54,12 +55,19 @@ a.card:hover {
         margin: 0;
         margin-bottom: 1rem;
     }
+
 }
 
 /* Style produit page produit */
 
 .produit {
     width: 25%;
+}
+
+@media(max-width : 768px) {
+    .produit {
+        width: 65%;
+    }
 }
 
 /* Style Bouton */
@@ -103,6 +111,12 @@ td {
 }
 .btn.btn-primary.btn-basket{
     width: 60%;
+}
+@media(max-width : 768px){
+    .btn.btn-primary.btn-basket{
+        width: 100%;
+    }
+    
 }
 
 /* footer */
