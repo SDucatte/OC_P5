@@ -7,5 +7,9 @@ appelAjax({}).then((result) => {
        var product = new Product(productApi);
        div.innerHTML += product.displayList();
     } 
-})
+}).catch((resultFailed) => {
+    var resultFailed = "Oups, une erreur s'est produite !";
+    alert (resultFailed);
+
+});
 

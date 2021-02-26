@@ -15,5 +15,9 @@ appelAjax({ api: "/furniture/" + oneId }).then((productApi) => {
         basketManager.add(product);
     })
     
-})
+}).catch((resultFailed) => {
+    var resultFailed = "Oups, une erreur s'est produite !";
+    alert (resultFailed);
+
+});
 

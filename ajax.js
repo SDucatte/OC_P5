@@ -23,7 +23,7 @@ function appelAjax(options) {
                 resolve(JSON.parse(this.responseText));
 
             } else if (this.readyState == XMLHttpRequest.DONE && this.status != options.status) {
-                reject(JSON.parse(this.responseText));
+                reject(this.responseText);
             }
         };
         // Intanciation de la requete 
