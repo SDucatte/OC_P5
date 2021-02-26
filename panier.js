@@ -41,7 +41,7 @@ var validation = document.getElementById('command');
 validation.addEventListener('click', function() {
     let valid = true;
     // Définition des expressions régulières qui vont déterminer le format de données attendues
-    let myRegexLetter = /^[a-zA-Z-\s]+$/;
+    let myRegexLetter = /^[a-zA-Z0-9-\s]+$/;
     let myRegexMail = /^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]+$/;
     let myRegexAddress = /^[a-zA-Z0-9-\s]+$/;
     
@@ -71,16 +71,16 @@ validation.addEventListener('click', function() {
                 errorMessage.textContent = "Ce champs ne doit comporter que des lettres";
                 valid = false;
                 // Vérifie le champs adresse
-            }     else if (myRegexAddress.test(input.value) == false) {
-                let errorMessage = document.querySelector(`#error-${input.id}`);
+            } else if (myRegexAddress.test(input.value) == false) {
+                let errorMessage = document.getElementById('error-address');
                 errorMessage.textContent = "Ce champs ne doit comporter que des lettres et/ou des chiffres !";
                 valid = false;
             }
-
+            
         } 
     });
     
-
+    
     
     
     
